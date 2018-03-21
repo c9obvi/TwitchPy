@@ -14,7 +14,7 @@ def wins():
 
 
 root = Tk()
-root.geometry('350x175')
+root.geometry('375x175')
 root.title("TwitchPy ScoreKeeper")
 myKills = StringVar()
 myDeaths = StringVar()
@@ -30,9 +30,12 @@ entry_2 = Entry(root, textvariable = myKills).grid(row=1, column = 1)
 entry_3 = Entry(root, textvariable = myDeaths).grid(row=2, column = 1)
 
 label_ws = Label(root, text = "Enter Data and Update!")
+label_ws.configure(font='Helvetica 10 bold')
 label_ws.grid(row=0, column=3)
+
 label_KDA = Label(root, text = "Enter K/D and Update!")
 label_KDA.grid(row=1, column=3)
+label_KDA.configure(font='Helvetica 10 bold')
 
 x = myKills.get()
 y = myDeaths.get()
