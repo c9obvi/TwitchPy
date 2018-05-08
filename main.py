@@ -7,8 +7,9 @@ from numpy import *
 
 root = Tk()
 #root.iconbitmap(root, default = "TpyICO.ico" )
-root.geometry('475x175')
-root.title("TwitchPy ScoreKeeper")
+root.geometry('460x175')
+root.title("TwitchPy KD Session- By ShareFire.net")
+
 myKills = StringVar()
 myDeaths = StringVar()
 myWins = StringVar()
@@ -22,16 +23,19 @@ DS = float
 SKDR = float
 #-----------------------------------------------------------------------------------------
 
-#-----Session Tracking Variables below -----------------------------------------
+#-----Session Tracking Arrays "lists" below -----------------------------------------
 
+#Kills List
 seshk = []
+
+#Deaths List
 seshd = []
 
 #-----------LEFT-Side    INPUT/ENTRIES   &  labels----------------------------------------
 
-label_1 = Label(root, text="Wins", fg="Black").grid(row=0, sticky = E)
-label_2 = Label(root, text="Kills", fg="Black").grid(row=1, sticky = E)
-label_3 = Label(root, text="Deaths", fg="Black").grid(row=2, sticky = E)
+label_1 = Label(root, text="Wins:", fg="Black").grid(row=0, sticky = E)
+label_2 = Label(root, text="Kills:", fg="Black").grid(row=1, sticky = E)
+label_3 = Label(root, text="Deaths:", fg="Black").grid(row=2, sticky = E)
 
 entry_1 = Entry(root, textvariable = myWins)
 entry_1.grid(row=0, column = 1)
@@ -119,8 +123,8 @@ def clearEntry():
 # attempting to make array work with sum and concatenating the sum into session stats.
 def sessionTrack():
 
-    label_killCount.configure(text="Your kills this session are: " + str(sum(seshk)))
-    label_deathCount.configure(text="Your deaths this session are: " + str(sum(seshd)))
+    label_killCount.configure(text="Kills this session: " + str(sum(seshk)))
+    label_deathCount.configure(text="Deaths this session: " + str(sum(seshd)))
 
     kills = int(sum(seshk))
     deaths = int(sum(seshd))
@@ -131,7 +135,7 @@ def sessionTrack():
     except ZeroDivisionError:
         myKDA = kills/1
 
-    label_SessionCount.configure(text="Your KDA This Session: %.3f " % myKDA, font='Helvetica 10 bold')
+    label_SessionCount.configure(text="K/D This Session: %.3f " % myKDA, font='Helvetica 10 bold')
 
     return;
 
