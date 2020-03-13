@@ -8,7 +8,8 @@ from numpy import *
 root = Tk()
 #root.iconbitmap(root, default = "TpyICO.ico" )
 root.geometry('460x175')
-root.title("TwitchPy KD Session- By ShareFire.net")
+root.title("TwitchPy KD Session- By @Nimble.Berto")
+
 
 myKills = StringVar()
 myDeaths = StringVar()
